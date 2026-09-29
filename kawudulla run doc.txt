@@ -1,0 +1,89 @@
+i need guid ipoen my project step by step                       
+
+● Sure, here's your complete step-by-step guide:
+
+  ---
+  🚀 How to Start Your Library Management Project
+
+  Step 1: Start the Backend (API Server)
+
+  Open a terminal and run:
+
+  cd "C:\Users\THISARA\OneDrive\Desktop\Kawudulla LB\server"
+  node server.js
+
+  You should see:
+  Server running on port 5000
+  MongoDB Connected: ...
+
+  Leave this terminal running — don't close it.
+
+  ---
+  Step 2: Start the Frontend (React App)
+
+  Open a new terminal and run:
+
+  cd "C:\Users\THISARA\OneDrive\Desktop\Kawudulla LB\client"
+  npm start
+
+  This will open your browser automatically to
+  http://localhost:3000
+
+  Leave this terminal running too — don't close it.
+
+  ---
+  Step 3: Login to Your App
+
+  Go to the browser and login with the librarian account:
+
+  ┌──────────┬───────────────────┐
+  │  Field   │       Value       │
+  ├──────────┼───────────────────┤
+  │ Email    │ admin@library.com │
+  ├──────────┼───────────────────┤
+  │ Password │ admin123456       │
+  └──────────┴───────────────────┘
+
+  ---
+  Step 4: Add Your Books
+
+  1. Click Book Management in the sidebar
+  2. Click "+ Add New Book"
+  3. Fill in the book details and save
+  4. Repeat for each book
+
+  ---
+  Quick Reference - All Login Accounts
+
+  ┌───────────────────┬───────────────────┬─────────────┐
+  │       Role        │       Email       │  Password   │
+  ├───────────────────┼───────────────────┼─────────────┤
+  │ Librarian (Admin) │ admin@library.com │ admin123456 │
+  ├───────────────────┼───────────────────┼─────────────┤
+  │ Librarian (Seed)  │ librarian@kmv.edu │ password123 │
+  ├───────────────────┼───────────────────┼─────────────┤
+  │ Teacher           │ teacher@kmv.edu   │ password123 │
+  ├───────────────────┼───────────────────┼─────────────┤
+  │ Student           │ student@kmv.edu   │ password123 │
+  └───────────────────┴───────────────────┴─────────────┘
+
+  ---
+  To Stop the Project
+
+  Press Ctrl + C in each terminal where the server/frontend is
+  running.
+
+  ---
+  Want me to start both servers for you right now so you can go
+  directly to the browser?
+
+  Thought for 1s (ctrl+o to expand)
+
+✻ Baked for 12s
+
+※ recap: Your Library Management System backend and frontend need 
+  to be running to access the app. MongoDB Atlas is connected but 
+  the database is empty with no books. Start the server and client
+  if not already running, then log in as `admin@library.com` / 
+  `admin123456` and add books through the Book Management page.
+  (disable recaps in /config)

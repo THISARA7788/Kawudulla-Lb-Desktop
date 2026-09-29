@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&family=Noto+Sans+Sinhala:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Inter', 'Noto Sans Sinhala', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #f5f7fa;
+    color: #2c2f32;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, .font-headline {
+    font-family: 'Manrope', 'Noto Sans Sinhala', sans-serif;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+.pie-segment {
+  transition: transform 0.3s ease;
+}
+.pie-segment:hover {
+  transform: scale(1.05);
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ===== Modern Auto-Hiding Overlay Scrollbars ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 9999px;
+  transition: background-color 0.25s ease-in-out;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.65);
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+*:hover {
+  scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+}
+
+/* ===== LOGIN PAGE ===== */
+.login-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.login-left {
+  flex: 0 0 45%;
+  background: #9E0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-left-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.school-logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.login-left-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.login-left-content p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.75rem;
+}
+
+.login-left .circle-1 {
+  width: 450px; height: 450px;
+  background: rgba(255,255,255,0.03);
+  position: absolute;
+  top: 10%; left: -10%;
+  border-radius: 50%;
+}
+.login-left .circle-2 {
+  width: 350px; height: 350px;
+  background: rgba(255,255,255,0.04);
+  position: absolute;
+  bottom: -5%; right: -8%;
+  border-radius: 50%;
+}
+
+.login-right {
+  flex: 0 0 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 2rem;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 440px;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #9E0D0D;
+  margin-bottom: 0.25rem;
+  font-family: 'Manrope', 'Noto Sans Sinhala', sans-serif;
+}
+
+.welcome-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+/* Role Tabs */
+.role-tabs {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.role-tab {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  background: #fff;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.role-tab.active {
+  background: #9E0D0D;
+  color: #fff;
+  border-color: #9E0D0D;
+  box-shadow: 0 2px 8px rgba(26,18,69,0.15);
+}
+
+.role-tab:hover:not(.active) {
+  border-color: #9E0D0D;
+  color: #9E0D0D;
+}
+
+/* Form Groups */
+.form-group-new {
+  margin-bottom: 1rem;
+}
+
+.form-group-new label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #9E0D0D;
+  margin-bottom: 0.4rem;
+}
+
+.form-group-new input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: #e8eeff;
+  color: #2c2f32;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.form-group-new input:focus {
+  box-shadow: 0 0 0 2px #9E0D0D;
+}
+
+.form-group-new input::placeholder {
+  color: #94a3b8;
+}
+
+/* Forgot Password */
+.forgot-password {
+  display: block;
+  text-align: right;
+  font-size: 0.8rem;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+  color: #9E0D0D;
+}
+
+/* Login Button */
+.btn-login {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  background: #9E0D0D;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(26,18,69,0.15);
+}
+
+.btn-login:hover {
+  opacity: 0.9;
+}
+
+.btn-login:active {
+  transform: scale(0.98);
+}
+
+.btn-login:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* OR Divider */
+.or-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.or-divider span {
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.or-divider p {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Register Text & Button */
+.register-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.btn-register {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #9E0D0D;
+  border-radius: 12px;
+  background: transparent;
+  color: #9E0D0D;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-register:hover {
+  background: #9E0D0D;
+  color: #fff;
+}
+
+/* Error message */
+.message.error {
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  margin-bottom: 1rem;
+}
+
+.message.success {
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  background: #f0fdf4;
+  color: #166534;
+  border: 2px solid #86efac;
+  margin-bottom: 1rem;
+}
+
+/* ===== REGISTER PAGE ===== */
+.register-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.register-left {
+  flex: 0 0 45%;
+  background: #9E0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-left-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.register-left-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.register-left-content p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.75rem;
+}
+
+.register-left .circle-1 {
+  width: 450px; height: 450px;
+  background: rgba(255,255,255,0.03);
+  position: absolute;
+  top: 10%; left: -10%;
+  border-radius: 50%;
+}
+.register-left .circle-2 {
+  width: 350px; height: 350px;
+  background: rgba(255,255,255,0.04);
+  position: absolute;
+  bottom: -5%; right: -8%;
+  border-radius: 50%;
+}
+
+.register-right {
+  flex: 0 0 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 2rem;
+}
+
+.register-form-container {
+  width: 100%;
+  max-width: 440px;
+}
+
+.register-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #9E0D0D;
+  margin-bottom: 0.25rem;
+  font-family: 'Manrope', 'Noto Sans Sinhala', sans-serif;
+}
+
+.register-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.field-hint {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.3rem;
+}
+
+.btn-register-submit {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  background: #9E0D0D;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(26,18,69,0.15);
+}
+
+.btn-register-submit:hover {
+  opacity: 0.9;
+}
+
+.btn-register-submit:active {
+  transform: scale(0.98);
+}
+
+.btn-register-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 1.25rem;
+}
+
+.login-text a {
+  color: #9E0D0D;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* ===== DASHBOARD (Student/Teacher) ===== */
+.dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #0f1923 0%, #9E0D0D 100%);
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+.dashboard-card h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #9E0D0D;
+  margin-bottom: 0.5rem;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.role-badge.student { background: #e0e7ff; color: #3730a3; }
+.role-badge.teacher { background: #dcfce7; color: #166534; }
+.role-badge.librarian { background: #fef3c7; color: #92400e; }
+
+.user-email {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.role-message {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-logout {
+  padding: 0.75rem 2rem;
+  border: 2px solid #9E0D0D;
+  border-radius: 8px;
+  background: transparent;
+  color: #9E0D0D;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-logout:hover {
+  background: #9E0D0D;
+  color: #fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .login-left,
+  .register-left {
+    display: none;
+  }
+
+  .login-right,
+  .register-right {
+    flex: 1;
+  }
+}

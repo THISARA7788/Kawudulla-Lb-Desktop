@@ -1,0 +1,22 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Checking for package.json changes after merge..."
+
+# Check if client/package.json changed
+if git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet 'client/package.json'; then
+  echo "client/package.json changed. Running npm install in client..."
+  npm install --prefix client
+fi
+
+# Check if server/package.json changed
+if git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet 'server/package.json'; then
+  echo "server/package.json changed. Running npm install in server..."
+  npm install --prefix server
+fi
+
+# Check if root package.json changed
+if git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep -E --quiet '^package.json$'; then
+  echo "Root package.json changed. Running npm install in root..."
+  npm install
+fi

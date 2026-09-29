@@ -1,0 +1,50 @@
+{
+  "name": "kawudulla-library-management",
+  "version": "1.0.0",
+  "description": "Kawudulla Library Management System",
+  "main": "main.js",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "start": "concurrently \"npm run start --prefix server\" \"npm run start --prefix client\"",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run start --prefix client\"",
+    "build:client": "npm run build --prefix client",
+    "electron:start": "electron .",
+    "dist": "npm run build:client && electron-builder --win",
+    "seed:db": "npm run seed:mock --prefix server",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "mongodb": "^7.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^41.3.0",
+    "electron-builder": "^26.0.2",
+    "husky": "^8.0.0"
+  },
+  "build": {
+    "appId": "com.kawudulla.library",
+    "productName": "Kawudulla Central College Library",
+    "asar": false,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "server/**/*",
+      "client/build/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Kawudulla Library System"
+    }
+  }
+}
